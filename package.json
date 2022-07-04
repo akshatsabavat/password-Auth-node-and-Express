@@ -1,0 +1,26 @@
+{
+  "name": "password-auth-node-and-express",
+  "version": "1.0.0",
+  "description": "A password authentication system built with Express and Node js",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshatsabavat/password-Auth-node-and-Express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshatsabavat/password-Auth-node-and-Express/issues"
+  },
+  "homepage": "https://github.com/akshatsabavat/password-Auth-node-and-Express#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.18"
+  }
+}
