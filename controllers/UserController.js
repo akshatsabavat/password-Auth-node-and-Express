@@ -35,3 +35,22 @@ exports.deleteUser = async (req, res) => {
     res.status(500).send({ message: err.message });
   }
 };
+
+exports.loginUser = async (req, res) => {
+  const user = await User.findOne({ username: req.body.username });
+  if (user == null) res.status(404).send({ message: "user not found" });
+
+  try {
+    const passwordMatch = await bycrypt.compareSync(
+      req.body.password,
+      user.password
+    );
+    if (passwordMatch) {
+      res.send({ message: `Welcome back ${user.username}` });
+    } else {
+      res.send({ message: `invalid password` });
+    }
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+};
